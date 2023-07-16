@@ -1,6 +1,5 @@
 class FarmersController < ApplicationController
   def new
-    
     @farmer = Farmer.new
   end
 
