@@ -11,10 +11,9 @@ class BuyersController < ApplicationController
       render :new
     end
   end
-
   private
 
   def buyer_params
-    params.require(:buyer).permit(:name, :location, :contact_information, :farmer_id)
+    params.require(:buyer).permit(:name,:location, :farmer_id)
   end
-end
+end 
