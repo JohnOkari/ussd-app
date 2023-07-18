@@ -1,0 +1,2 @@
+class FarmerResponsesController < ApplicationController
+end
