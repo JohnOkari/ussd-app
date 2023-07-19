@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :products
-  resources :orders
+  resources :orders, only: [:show, :create]
   resources :buyers, only: [:new, :create]
   resources :farmers, only: [:new, :create]
   resources :buyer_requests, only: [:index, :new, :create]
