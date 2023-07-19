@@ -6,12 +6,16 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      # Add logic to generate the order confirmation and handle buyer confirmations here
+      # Generate order confirmation message
+      confirmation_message = "Thank you for your order. Order details: Product: #{order.product.name}, Quantity: #{order.quantity}, Delivery Address: #{order.delivery_address}."
+      # Send the confirmation message to the buyer via SMS or USSD
+      send_confirmation_message(confirmation_message, order.buyer.contact_information)
       redirect_to order_path(@order), notice: "Order placed successfully."
     else
       render :new
     end
   end
+  
 
   private
 
