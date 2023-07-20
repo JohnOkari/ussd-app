@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :farmers, only: [:new, :create]
   resources :buyer_requests, only: [:index, :new, :create]
   resources :farmer_responses, only: [:new, :create]
+  resources :deliveries, only: [:show, :create]
+  resources :payments, only: [:show, :create]
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
